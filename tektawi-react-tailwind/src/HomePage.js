@@ -1,38 +1,42 @@
+// src/pages/HomePage.js
 import React from 'react';
 
-export default function HomePage() {
+const HomePage = () => {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
-      <header className="p-6 bg-green-900 text-white shadow-md">
-        <h1 className="text-3xl font-bold">TekTawi</h1>
-        <p className="text-sm">African tech</p>
+    <div className="min-h-screen bg-black text-white flex flex-col justify-between">
+      {/* Header */}
+      <header className="p-6 flex items-center justify-between">
+        <div className="text-2xl font-bold tracking-wide">
+          <span className="text-lime-400">T</span>
+          <span className="transform -scale-y-100 inline-block text-lime-400">T</span>
+        </div>
+        <nav className="space-x-6 text-sm font-medium">
+          <a href="#about" className="hover:text-lime-400">About</a>
+          <a href="#services" className="hover:text-lime-400">Solutions</a>
+          <a href="#contact" className="hover:text-lime-400">Contact</a>
+        </nav>
       </header>
 
-      <section className="p-6 text-center bg-green-50">
-        <h2 className="text-2xl font-semibold">Powering Africa’s future through smart, sustainable energy solutions.</h2>
-        <div className="mt-4">
-          <button className="mr-2 bg-green-700 text-white px-4 py-2 rounded">Request a Free Consultation</button>
-          <button className="border border-green-700 text-green-700 px-4 py-2 rounded">Explore Our Services</button>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <main className="flex flex-col items-center justify-center text-center px-6 py-20">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+          African Tech<br />
+          <span className="text-lime-400">Rooted. Refined. Reimagined.</span>
+        </h1>
+        <p className="text-gray-300 max-w-xl mb-6">
+          Tektawi empowers sustainable futures through clean energy innovation and environmental engineering, tailored for Africa’s tomorrow.
+        </p>
+        <a href="#contact" className="bg-lime-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-lime-300 transition">
+          Let’s Collaborate
+        </a>
+      </main>
 
-      <section className="p-6 grid md:grid-cols-3 gap-4">
-        {['Solar PV & Thermal', 'Wind Energy', 'Biogas', 'Energy Audits', 'EIA Services'].map(service => (
-          <div key={service} className="border rounded-xl p-4 shadow-sm">
-            <h3 className="text-lg font-bold mb-2">{service}</h3>
-            <p className="text-sm">Learn how TekTawi delivers custom clean energy solutions for Africa.</p>
-          </div>
-        ))}
-      </section>
-
-      <section className="p-6 text-center bg-green-100">
-        <h3 className="text-xl font-semibold mb-2">Let’s build your energy future together.</h3>
-        <button className="bg-green-700 text-white px-4 py-2 rounded">Book a Consultation</button>
-      </section>
-
-      <footer className="p-6 text-center text-xs bg-green-900 text-white">
-        &copy; {new Date().getFullYear()} TekTawi. All rights reserved.
+      {/* Footer */}
+      <footer className="text-sm text-gray-500 text-center py-6 border-t border-gray-700">
+        © {new Date().getFullYear()} Tektawi Co. — REN.SUST.ENERG.
       </footer>
-    </main>
+    </div>
   );
-}
+};
+
+export default HomePage;
